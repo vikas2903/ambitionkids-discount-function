@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "91ed9a3a235f1f86804b4faf93c4a9dc"
-application_url = "https://example.com"
+application_url = "https://ambitionkids-discount-function.onrender.com"
 embedded = true
 name = "disocunt-app-ambitionkids"
 
@@ -10,7 +10,7 @@ name = "disocunt-app-ambitionkids"
 scopes = "read_discounts,read_products,write_discounts,write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [ "https://ambitionkids-discount-function.onrender.com/api/auth" ]
 
 [webhooks]
 api_version = "2026-07"
