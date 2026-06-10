@@ -1,0 +1,75 @@
+{
+  "payload": {
+    "export": "run",
+    "target": "purchase.product-discount.run",
+    "input": {
+      "cart": {
+        "lines": [
+          {
+            "id": "gid://shopify/CartLine/main-line",
+            "quantity": 1,
+            "attribute": {
+              "value": null
+            },
+            "cost": {
+              "amountPerQuantity": {
+                "amount": "1899.00"
+              }
+            },
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/11",
+              "product": {
+                "id": "gid://shopify/Product/11",
+                "inMainCollection": true,
+                "inStealDealCollection": false
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/CartLine/steal-line",
+            "quantity": 2,
+            "attribute": {
+              "value": "STEAL DEAL @ RS. 599"
+            },
+            "cost": {
+              "amountPerQuantity": {
+                "amount": "999.00"
+              }
+            },
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/22",
+              "product": {
+                "id": "gid://shopify/Product/22",
+                "inMainCollection": false,
+                "inStealDealCollection": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "output": {
+      "discountApplicationStrategy": "FIRST",
+      "discounts": [
+        {
+          "message": "Steal Deal unlocked",
+          "targets": [
+            {
+              "cartLine": {
+                "id": "gid://shopify/CartLine/steal-line"
+              }
+            }
+          ],
+          "value": {
+            "fixedAmount": {
+              "amount": "400.00",
+              "appliesToEachItem": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}
