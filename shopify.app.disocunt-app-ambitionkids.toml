@@ -10,10 +10,13 @@ name = "disocunt-app-ambitionkids"
 scopes = "read_discounts,read_products,write_discounts,write_products"
 
 [auth]
-redirect_urls = [ "https://ambitionkids-discount-function.onrender.com/api/auth" ]
+redirect_urls = [
+  "https://ambitionkids-discount-function.onrender.com/auth/callback",
+  "https://ambitionkids-discount-function.onrender.com/auth/shopify/callback"
+]
 
 [webhooks]
 api_version = "2026-07"
 
 [build]
-automatically_update_urls_on_dev = true
+automatically_update_urls_on_dev = false

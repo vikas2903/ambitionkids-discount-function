@@ -13,6 +13,20 @@ export const loader = async ({ request }) => {
 export default function App() {
   const { apiKey } = useLoaderData();
 
+  if (!apiKey) {
+    return (
+      <s-page heading="App configuration error">
+        <s-section heading="Missing SHOPIFY_API_KEY">
+          <s-paragraph>
+            The embedded app could not initialize because the
+            <code> SHOPIFY_API_KEY </code>
+            environment variable is missing on the server.
+          </s-paragraph>
+        </s-section>
+      </s-page>
+    );
+  }
+
   return (
     <AppProvider embedded apiKey={apiKey}>
       <s-app-nav>

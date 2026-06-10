@@ -1,7 +1,7 @@
 # This file stores configurations for your Shopify app.
-client_id = "28895ec88647c70351b5d08ac9e98bae"
+client_id = "91ed9a3a235f1f86804b4faf93c4a9dc"
 name = "ambitionkids-discountapp"
-application_url = "https://shopify.dev/apps/default-react-router-app"
+application_url = "https://ambitionkids-discount-function.onrender.com"
 embedded = true
 
 [access_scopes]
@@ -19,7 +19,8 @@ api_version = "2025-10"
   uri = "/webhooks/app/scopes_update"
 
 [auth]
-redirect_urls = ["https://shopify.dev/apps/default-react-router-app/auth/callback"]
+redirect_urls = ["https://ambitionkids-discount-function.onrender.com/auth/callback"]
 
 [build]
-automatically_update_urls_on_dev = true
+automatically_update_urls_on_dev = false
+

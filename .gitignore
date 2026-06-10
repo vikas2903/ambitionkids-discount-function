@@ -21,8 +21,11 @@ lerna-debug.log*
 
 # Build
 dist
+build
+public/build
 shared/types/graphql
 *.local
+extensions/*/generated/*
 
 # Editor directories and files
 .vscode/*

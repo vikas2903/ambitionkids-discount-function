@@ -1,5 +1,6 @@
 import path from "path";
 import fs from "fs";
+import { fileURLToPath } from "url";
 import { describe, beforeAll, test, expect } from "vitest";
 import { buildFunction, getFunctionInfo, loadSchema, loadInputQuery, loadFixture, validateTestAssets, runFunction } from "@shopify/shopify-function-test-helpers";
 
@@ -11,16 +12,17 @@ describe("Default Integration Test", () => {
   let targeting;
   let functionRunnerPath;
   let wasmPath;
+  const testsDir = path.dirname(fileURLToPath(import.meta.url));
 
   beforeAll(async () => {
-    functionDir = path.dirname(__dirname);
+    functionDir = path.dirname(testsDir);
     await buildFunction(functionDir);
     functionInfo = await getFunctionInfo(functionDir);
     ({ schemaPath, functionRunnerPath, wasmPath, targeting } = functionInfo);
     schema = await loadSchema(schemaPath);
   }, 120000);
 
-  const fixturesDir = path.join(__dirname, "fixtures");
+  const fixturesDir = path.join(testsDir, "fixtures");
   const fixtureFiles = fs.readdirSync(fixturesDir)
     .filter((file) => file.endsWith(".json"))
     .map((file) => path.join(fixturesDir, file));
